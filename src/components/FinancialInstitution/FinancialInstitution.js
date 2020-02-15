@@ -22,15 +22,11 @@ export default class FinancialInstitution extends Component {
               backgroundColor: `#${fi.fiBrand.bgColor}`
             }
           },
-          () => {
-            console.log(this.state);
-          }
+          () => {}
         );
 
         FinancialInstitutionServices.getLogoAndBGColor(fi.fiBrand)
-          .then(logo => {
-            console.log(logo);
-          })
+          .then(logo => {})
           .catch(err => console.log(err));
       })
       .catch(err => console.log(err));
