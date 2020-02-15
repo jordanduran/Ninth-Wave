@@ -22,7 +22,3 @@ User stories are listed below in order of priority:
 ### Deployment Status
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/55e72e3b-d1d0-4c3f-b07a-a01a6d1b5546/deploy-status)](https://app.netlify.com/sites/ninthwavesearch/deploys)
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
