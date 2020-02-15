@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import FinancialInstitutionServices from '../../Services/FinancialInstitutionServices';
+import AppContext from '../../Context/AppContext';
+import Suggestions from '../Suggestions/Suggestions';
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -8,6 +11,40 @@ export default class SearchBar extends Component {
       suggestions: []
     };
   }
+
+  static contextType = AppContext;
+
+  handleSearchSubmit = e => {
+    e.preventDefault();
+    FinancialInstitutionServices.getSearchResults(this.state.term)
+      .then(results => this.context.setResults(results.results))
+      .catch(err => console.log(err));
+
+    this.setState({
+      suggestions: [],
+      term: ''
+    });
+  };
+
+  resetSuggestions = () => {
+    this.setState({
+      suggestions: []
+    });
+  };
+
+  handleOnChange = term => {
+    this.setState({
+      term
+    });
+
+    if (term) {
+      FinancialInstitutionServices.getSuggestions(term)
+        .then(response =>
+          this.setState({ suggestions: response.results.suggestions })
+        )
+        .catch(err => console.log(err));
+    }
+  };
 
   render() {
     return (
@@ -26,6 +63,12 @@ export default class SearchBar extends Component {
           />
           <button type='submit'>Search</button>
         </form>
+        {this.state.term && (
+          <Suggestions
+            suggestions={this.state.suggestions}
+            resetSuggestions={this.resetSuggestions}
+          />
+        )}
       </div>
     );
   }
