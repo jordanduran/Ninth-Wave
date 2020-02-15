@@ -1,5 +1,4 @@
 import config from '../config';
-
 const postHeaders = {
   Authorization: 'not-currently-required',
   AppId: 'not-currently-required',
@@ -14,7 +13,7 @@ const getHeader = {
 
 const FinancialInstitutionServices = {
   getSuggestions(term) {
-    return fetch(`${config.baseURL}/suggestion`, {
+    return fetch(`${config.baseUrl}/suggestion`, {
       method: 'POST',
       headers: postHeaders,
       body: JSON.stringify({
@@ -29,7 +28,8 @@ const FinancialInstitutionServices = {
       });
   },
   getSearchResults(term) {
-    return fetch(`${config.baseURL}/search?q=${term}`, {
+    console.log(`\nrun get search results`);
+    return fetch(`${config.baseUrl}/search?q=${term}`, {
       method: 'POST',
       headers: postHeaders
     })
