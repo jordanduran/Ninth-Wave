@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FinancialInstitutionServices from '../../Services/FinancialInstitutionServices';
 import AppContext from '../../Context/AppContext';
 import Suggestions from '../Suggestions/Suggestions';
+import './SearchBar.css';
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -48,20 +49,27 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <div className='SearchBar'>
+      <div className='search-bar ui segment'>
         <form
           onSubmit={e => {
             this.handleSearchSubmit(e);
           }}
+          className='ui form'
         >
-          <input
-            type='text'
-            value={this.state.term}
-            onChange={e => {
-              this.handleOnChange(e.target.value);
-            }}
-          />
-          <button type='submit'>Search</button>
+          <div className='field'>
+            <label>Search for Financial Institutions</label>
+            <input
+              type='text'
+              value={this.state.term}
+              onChange={e => {
+                this.handleOnChange(e.target.value);
+              }}
+              className='prompt'
+            />
+          </div>
+          <button type='submit' className='search-btn ui button'>
+            Search
+          </button>
         </form>
         {this.state.term && (
           <Suggestions

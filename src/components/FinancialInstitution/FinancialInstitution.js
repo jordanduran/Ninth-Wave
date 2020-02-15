@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FinancialInstitutionServices from '../../Services/FinancialInstitutionServices';
+import './FinancialInstitution.css';
 
 export default class FinancialInstitution extends Component {
   constructor(props) {
@@ -45,8 +46,9 @@ export default class FinancialInstitution extends Component {
             onClick={() => {
               this.props.rprops.history.goBack();
             }}
+            classname='back-btn'
           >
-            Go Back
+            <i className='back-btn-icon angle left icon'></i>
           </button>
           <div className='fi'>
             {this.state.fi.fiName}
@@ -64,10 +66,11 @@ export default class FinancialInstitution extends Component {
             onClick={() => {
               this.props.rprops.history.goBack();
             }}
+            classname='back-btn'
           >
-            Go Back
+            <i className='back-btn-icon angle left icon'></i>
           </button>
-          <div className='lodaing'>Loading...</div>
+          <div className='loading'>Loading...</div>
         </div>
       );
     }

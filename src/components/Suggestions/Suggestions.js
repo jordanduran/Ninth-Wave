@@ -22,12 +22,13 @@ export default class Suggestions extends Component {
 
   renderSuggestions = (suggestions = []) => {
     return suggestions.map((suggestion, i) => (
-      <li key={i}>
+      <li className='ui middle aligned divided list' key={i}>
         <Link
           to={`/`}
           onClick={() => {
             this.handleClick(suggestion);
           }}
+          className='item'
         >
           {suggestion}
         </Link>

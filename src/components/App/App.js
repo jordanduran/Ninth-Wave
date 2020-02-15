@@ -30,7 +30,7 @@ class App extends React.Component {
 
     return (
       <AppContext.Provider value={val}>
-        <div className='App'>
+        <div className='ui container' style={{ paddingTop: '15px' }}>
           <Route exact path='/' component={SearchBar} />
           <Route
             exact
