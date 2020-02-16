@@ -64,6 +64,7 @@ export default class SearchBar extends Component {
               onChange={e => {
                 this.handleOnChange(e.target.value);
               }}
+              placeholder='Ex: Chase Bank'
               className='prompt'
             />
           </div>
