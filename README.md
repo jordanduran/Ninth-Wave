@@ -1,10 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can view the live version of this repository here - https://ninthwavesearch.netlify.com/
-
 ## Ninth Wave Build Challenge
 
-In the project directory, you can run:
+You can view the live version of this repository here - https://ninthwavesearch.netlify.com/
 
 ### Suggestions & Search Experience
 
